@@ -1,0 +1,12 @@
+[
+  {
+    "modid": "cbp",
+    "name": "Custom Block Particles",
+    "description": "Spawns highly customizable particles around blocks",
+    "version": "${version}",
+    "mcversion": "${mcversion}",
+    "url": "https://github.com/ACGaming/CustomBlockParticles",
+    "authorList": ["ACGaming"],
+    "credits": "CleanroomMC"
+  }
+]
