@@ -28,13 +28,14 @@ Specifies the method by which particles are spawned. Valid values include `FIRE_
 
 #### Particle Rates
 
-Sets the cooldown time between each particle spawning.
+Sets the cooldown time in ticks between each particle spawning.
 **Example:** `10`
 
 #### Particle Types
 
 Defines the types of particles that will be spawned around the specified blocks.
-**Example:** `minecraft:note`
+Any particle that can be spawned with the `/particle` command is supported.
+**Example:** `note`
 
 ### Configuration Example
 
