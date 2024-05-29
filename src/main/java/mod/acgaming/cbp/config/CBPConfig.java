@@ -28,8 +28,32 @@ public class CBPConfig
     public static int[] cbpParticleRates = new int[] {10};
 
     @Config.Name("Particle Modes")
-    @Config.Comment({"The way particles are spawned", "Valid values: FIRE_SMOKE, MYCELIUM, REDSTONE_ORE", "TORCH"})
+    @Config.Comment({"The way particles are spawned", "Valid values: BASIC, DRIP, FIRE_SMOKE, MYCELIUM, REDSTONE_ORE", "TORCH"})
     public static String[] cbpParticleModes = new String[] {"MYCELIUM"};
+
+    @Config.Name("Particle Offset X")
+    @Config.Comment({"The offset of the particle (x-axis)", "Example: 0.5"})
+    public static double[] cbpParticleOffsetX = new double[] {0.5D};
+
+    @Config.Name("Particle Offset Y")
+    @Config.Comment({"The offset of the particle (y-axis)", "Example: 0.5"})
+    public static double[] cbpParticleOffsetY = new double[] {0.5D};
+
+    @Config.Name("Particle Offset Z")
+    @Config.Comment({"The offset of the particle (z-axis)", "Example: 0.5"})
+    public static double[] cbpParticleOffsetZ = new double[] {0.5D};
+
+    @Config.Name("Particle Motion X")
+    @Config.Comment({"The speed of the particle (x-axis), only supported by some particles", "Example: 0.0"})
+    public static double[] cbpParticleMotionX = new double[] {0.0D};
+
+    @Config.Name("Particle Motion Y")
+    @Config.Comment({"The speed of the particle (y-axis), only supported by some particles", "Example: 0.0"})
+    public static double[] cbpParticleMotionY = new double[] {0.0D};
+
+    @Config.Name("Particle Motion Z")
+    @Config.Comment({"The speed of the particle (z-axis), only supported by some particles", "Example: 0.0"})
+    public static double[] cbpParticleMotionZ = new double[] {0.0D};
 
     //@Config.Name("Custom Particles")
     //@Config.Comment({"Build custom particles", "Syntax: name;resourceLocation;width;height;duration"})
