@@ -2,7 +2,7 @@ package mod.acgaming.cbp;
 
 import mod.acgaming.cbp.util.CBPUtil;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -16,7 +16,7 @@ public class CustomBlockParticles
     public static final Logger LOGGER = LogManager.getLogger(NAME);
 
     @Mod.EventHandler
-    public void init(FMLInitializationEvent event)
+    public void postInit(FMLPostInitializationEvent event)
     {
         CBPUtil.initLists();
         LOGGER.info(NAME + " initialized");

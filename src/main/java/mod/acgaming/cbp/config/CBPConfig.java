@@ -16,7 +16,7 @@ public class CBPConfig
     public static String[] cbpBlocks = new String[] {"minecraft:grass"};
 
     @Config.Name("Particle Types")
-    @Config.Comment("Example: minecraft:note")
+    @Config.Comment("Example: note")
     public static String[] cbpParticleTypes = new String[] {"note"};
 
     @Config.Name("Particle Densities")
@@ -30,6 +30,10 @@ public class CBPConfig
     @Config.Name("Particle Modes")
     @Config.Comment({"The way particles are spawned", "Valid values: FIRE_SMOKE, MYCELIUM, REDSTONE_ORE", "TORCH"})
     public static String[] cbpParticleModes = new String[] {"MYCELIUM"};
+
+    //@Config.Name("Custom Particles")
+    //@Config.Comment({"Build custom particles", "Syntax: name;resourceLocation;width;height;duration"})
+    //public static String[] cbpCustomParticles = new String[] {};
 
     @Mod.EventBusSubscriber(modid = CustomBlockParticles.MOD_ID)
     public static class EventHandler

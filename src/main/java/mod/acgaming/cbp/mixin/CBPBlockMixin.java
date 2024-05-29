@@ -28,9 +28,9 @@ public abstract class CBPBlockMixin
     {
         try
         {
-            if (!CBPUtil.cbpBlockMap.isEmpty() && CBPUtil.cbpBlockMap.contains(state.getBlock()))
+            if (!CBPUtil.cbpBlockList.isEmpty() && CBPUtil.cbpBlockList.contains(state.getBlock()))
             {
-                int index = CBPUtil.cbpBlockMap.indexOf(state.getBlock());
+                int index = CBPUtil.cbpBlockList.indexOf(state.getBlock());
                 if (cbp$rate <= 0)
                 {
                     switch (CBPConfig.cbpParticleModes[index])
@@ -68,7 +68,7 @@ public abstract class CBPBlockMixin
             double d0 = (double) pos.getX() + world.rand.nextDouble();
             double d1 = (double) pos.getY() + world.rand.nextDouble() * 0.5D + 0.5D;
             double d2 = (double) pos.getZ() + world.rand.nextDouble();
-            world.spawnParticle(CBPUtil.cbpParticleTypeMap.get(index), d0, d1, d2, 0.0D, 0.0D, 0.0D);
+            world.spawnParticle(CBPUtil.cbpParticleTypeList.get(index), d0, d1, d2, 0.0D, 0.0D, 0.0D);
         }
     }
 
@@ -77,7 +77,7 @@ public abstract class CBPBlockMixin
     {
         if (world.rand.nextInt(CBPConfig.cbpParticleDensities[index]) == 0)
         {
-            world.spawnParticle(CBPUtil.cbpParticleTypeMap.get(index), (float) pos.getX() + world.rand.nextFloat(), (float) pos.getY() + 1.1F, (float) pos.getZ() + world.rand.nextFloat(), 0.0D, 0.0D, 0.0D);
+            world.spawnParticle(CBPUtil.cbpParticleTypeList.get(index), (float) pos.getX() + world.rand.nextFloat(), (float) pos.getY() + 1.1F, (float) pos.getZ() + world.rand.nextFloat(), 0.0D, 0.0D, 0.0D);
         }
     }
 
@@ -124,7 +124,7 @@ public abstract class CBPBlockMixin
 
             if (d1 < (double) pos.getX() || d1 > (double) (pos.getX() + 1) || d2 < 0.0D || d2 > (double) (pos.getY() + 1) || d3 < (double) pos.getZ() || d3 > (double) (pos.getZ() + 1))
             {
-                world.spawnParticle(CBPUtil.cbpParticleTypeMap.get(index), d1, d2, d3, 0.0D, 0.0D, 0.0D);
+                world.spawnParticle(CBPUtil.cbpParticleTypeList.get(index), d1, d2, d3, 0.0D, 0.0D, 0.0D);
             }
         }
     }
@@ -135,6 +135,6 @@ public abstract class CBPBlockMixin
         double d0 = (double) pos.getX() + 0.5D;
         double d1 = (double) pos.getY() + 0.7D;
         double d2 = (double) pos.getZ() + 0.5D;
-        world.spawnParticle(CBPUtil.cbpParticleTypeMap.get(index), d0, d1, d2, 0.0D, 0.0D, 0.0D);
+        world.spawnParticle(CBPUtil.cbpParticleTypeList.get(index), d0, d1, d2, 0.0D, 0.0D, 0.0D);
     }
 }
