@@ -12,14 +12,14 @@ public class CBPParticle extends Particle
     public CBPParticle(int id, World world, double xCoord, double yCoord, double zCoord, double xSpeed, double ySpeed, double zSpeed)
     {
         super(world, xCoord, yCoord, zCoord, xSpeed, ySpeed, zSpeed);
-        String[] properties = null;
-        for (String[] s : CBPUtil.cbpCustomParticleList)
-        {
-            if (s[0].equals(String.valueOf(id))) properties = s;
-        }
-        this.setParticleTexture(Minecraft.getMinecraft().getTextureMapBlocks().getAtlasSprite(new ResourceLocation(properties[1]).toString()));
-        this.setSize(Float.parseFloat(properties[2]), Float.parseFloat(properties[3]));
-        this.particleMaxAge = Integer.parseInt(properties[4]);
+        //String[] properties = null;
+        //for (String[] s : CBPUtil.cbpCustomParticleList)
+        //{
+        //    if (s[0].equals(String.valueOf(id))) properties = s;
+        //}
+        //this.setParticleTexture(Minecraft.getMinecraft().getTextureMapBlocks().getAtlasSprite(new ResourceLocation(properties[1]).toString()));
+        //this.setSize(Float.parseFloat(properties[2]), Float.parseFloat(properties[3]));
+        //this.particleMaxAge = Integer.parseInt(properties[4]);
     }
 
     public static class Factory implements IParticleFactory
