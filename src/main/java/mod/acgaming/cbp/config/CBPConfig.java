@@ -16,7 +16,7 @@ public class CBPConfig
     public static String[] cbpBlocks = new String[] {"minecraft:grass"};
 
     @Config.Name("Particle Types")
-    @Config.Comment("Example: note")
+    @Config.Comment({"Example: note", "Exclusive particles: underwater, crimsonSpore, warpedSpore"})
     public static String[] cbpParticleTypes = new String[] {"note"};
 
     @Config.Name("Particle Densities")
@@ -55,9 +55,9 @@ public class CBPConfig
     @Config.Comment({"The speed of the particle (z-axis), only supported by some particles", "Example: 0.0"})
     public static double[] cbpParticleMotionZ = new double[] {0.0D};
 
-    //@Config.Name("Custom Particles")
-    //@Config.Comment({"Build custom particles", "Syntax: name;resourceLocation;width;height;duration"})
-    //public static String[] cbpCustomParticles = new String[] {};
+    @Config.Name("Particle Biomes")
+    @Config.Comment({"The resource location of the biomes where particles can spawn, ANY for every biome", "Example: minecraft:plains"})
+    public static String[] cbpParticleBiomes = new String[] {"minecraft:plains"};
 
     @Mod.EventBusSubscriber(modid = CustomBlockParticles.MOD_ID)
     public static class EventHandler

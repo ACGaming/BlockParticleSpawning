@@ -1,5 +1,6 @@
 package mod.acgaming.cbp;
 
+import mod.acgaming.cbp.util.CBPRegistry;
 import mod.acgaming.cbp.util.CBPUtil;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -18,6 +19,7 @@ public class CustomBlockParticles
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event)
     {
+        CBPRegistry.registerParticles();
         CBPUtil.initLists();
         LOGGER.info(NAME + " initialized");
     }

@@ -38,25 +38,26 @@ public abstract class CBPBlockMixin
                     double particleXSpeed = CBPConfig.cbpParticleMotionX[index];
                     double particleYSpeed = CBPConfig.cbpParticleMotionY[index];
                     double particleZSpeed = CBPConfig.cbpParticleMotionZ[index];
+                    String biomeName = CBPConfig.cbpParticleBiomes[index];
                     switch (CBPConfig.cbpParticleModes[index])
                     {
                         case "BASIC":
-                            cbp$spawnParticlesBasic(world, particlePos, particleXSpeed, particleYSpeed, particleZSpeed, index);
+                            cbp$spawnParticlesBasic(world, particlePos, particleXSpeed, particleYSpeed, particleZSpeed, index, biomeName);
                             break;
                         case "DRIP":
-                            cbp$spawnParticlesDrip(world, particlePos, particleXSpeed, particleYSpeed, particleZSpeed, index);
+                            cbp$spawnParticlesDrip(world, particlePos, particleXSpeed, particleYSpeed, particleZSpeed, index, biomeName);
                             break;
                         case "FIRE_SMOKE":
-                            cbp$spawnParticlesFireSmoke(world, particlePos, particleXSpeed, particleYSpeed, particleZSpeed, index);
+                            cbp$spawnParticlesFireSmoke(world, particlePos, particleXSpeed, particleYSpeed, particleZSpeed, index, biomeName);
                             break;
                         case "MYCELIUM":
-                            cbp$spawnParticlesMycelium(world, particlePos, particleXSpeed, particleYSpeed, particleZSpeed, index);
+                            cbp$spawnParticlesMycelium(world, particlePos, particleXSpeed, particleYSpeed, particleZSpeed, index, biomeName);
                             break;
                         case "REDSTONE_ORE":
-                            cbp$spawnParticlesRedstoneOre(world, particlePos, particleXSpeed, particleYSpeed, particleZSpeed, index);
+                            cbp$spawnParticlesRedstoneOre(world, particlePos, particleXSpeed, particleYSpeed, particleZSpeed, index, biomeName);
                             break;
                         case "TORCH":
-                            cbp$spawnParticlesTorch(world, particlePos, particleXSpeed, particleYSpeed, particleZSpeed, index);
+                            cbp$spawnParticlesTorch(world, particlePos, particleXSpeed, particleYSpeed, particleZSpeed, index, biomeName);
                             break;
                     }
                     cbp$rate = CBPConfig.cbpParticleRates[index];
@@ -72,14 +73,16 @@ public abstract class CBPBlockMixin
     }
 
     @Unique
-    private void cbp$spawnParticlesBasic(World world, BlockPos pos, double xSpeed, double ySpeed, double zSpeed, int index)
+    private void cbp$spawnParticlesBasic(World world, BlockPos pos, double xSpeed, double ySpeed, double zSpeed, int index, String biomeName)
     {
+        if (!biomeName.equals("ANY") && !world.getBiome(pos).getRegistryName().toString().equals(biomeName)) return;
         world.spawnParticle(CBPUtil.cbpParticleTypeList.get(index), pos.getX(), pos.getY(), pos.getZ(), xSpeed, ySpeed, zSpeed);
     }
 
     @Unique
-    private void cbp$spawnParticlesDrip(World world, BlockPos pos, double xSpeed, double ySpeed, double zSpeed, int index)
+    private void cbp$spawnParticlesDrip(World world, BlockPos pos, double xSpeed, double ySpeed, double zSpeed, int index, String biomeName)
     {
+        if (!biomeName.equals("ANY") && !world.getBiome(pos).getRegistryName().toString().equals(biomeName)) return;
         if (world.rand.nextInt(10) == 0 && world.getBlockState(pos.down()).isTopSolid())
         {
             Material material = world.getBlockState(pos.down(2)).getMaterial();
@@ -95,8 +98,9 @@ public abstract class CBPBlockMixin
     }
 
     @Unique
-    private void cbp$spawnParticlesFireSmoke(World world, BlockPos pos, double xSpeed, double ySpeed, double zSpeed, int index)
+    private void cbp$spawnParticlesFireSmoke(World world, BlockPos pos, double xSpeed, double ySpeed, double zSpeed, int index, String biomeName)
     {
+        if (!biomeName.equals("ANY") && !world.getBiome(pos).getRegistryName().toString().equals(biomeName)) return;
         for (int i = 0; i < CBPConfig.cbpParticleDensities[index]; ++i)
         {
             double d0 = (double) pos.getX() + world.rand.nextDouble();
@@ -107,8 +111,9 @@ public abstract class CBPBlockMixin
     }
 
     @Unique
-    private void cbp$spawnParticlesMycelium(World world, BlockPos pos, double xSpeed, double ySpeed, double zSpeed, int index)
+    private void cbp$spawnParticlesMycelium(World world, BlockPos pos, double xSpeed, double ySpeed, double zSpeed, int index, String biomeName)
     {
+        if (!biomeName.equals("ANY") && !world.getBiome(pos).getRegistryName().toString().equals(biomeName)) return;
         if (world.rand.nextInt(CBPConfig.cbpParticleDensities[index]) == 0)
         {
             world.spawnParticle(CBPUtil.cbpParticleTypeList.get(index), (float) pos.getX() + world.rand.nextFloat(), (float) pos.getY() + 1.1F, (float) pos.getZ() + world.rand.nextFloat(), xSpeed, ySpeed, zSpeed);
@@ -116,8 +121,9 @@ public abstract class CBPBlockMixin
     }
 
     @Unique
-    private void cbp$spawnParticlesRedstoneOre(World world, BlockPos pos, double xSpeed, double ySpeed, double zSpeed, int index)
+    private void cbp$spawnParticlesRedstoneOre(World world, BlockPos pos, double xSpeed, double ySpeed, double zSpeed, int index, String biomeName)
     {
+        if (!biomeName.equals("ANY") && !world.getBiome(pos).getRegistryName().toString().equals(biomeName)) return;
         Random random = world.rand;
 
         for (int i = 0; i < CBPConfig.cbpParticleDensities[index]; ++i)
@@ -164,8 +170,9 @@ public abstract class CBPBlockMixin
     }
 
     @Unique
-    private void cbp$spawnParticlesTorch(World world, BlockPos pos, double xSpeed, double ySpeed, double zSpeed, int index)
+    private void cbp$spawnParticlesTorch(World world, BlockPos pos, double xSpeed, double ySpeed, double zSpeed, int index, String biomeName)
     {
+        if (!biomeName.equals("ANY") && !world.getBiome(pos).getRegistryName().toString().equals(biomeName)) return;
         double d0 = (double) pos.getX() + 0.5D;
         double d1 = (double) pos.getY() + 0.7D;
         double d2 = (double) pos.getZ() + 0.5D;
