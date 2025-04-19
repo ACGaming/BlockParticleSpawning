@@ -1,12 +1,13 @@
-package mod.acgaming.cbp.util;
+package mod.acgaming.bps.util;
 
-import mod.acgaming.cbp.particle.ParticleUnderwater;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.particle.IParticleFactory;
 import net.minecraft.util.EnumParticleTypes;
 import net.minecraftforge.common.util.EnumHelper;
 
-public class CBPRegistry
+import mod.acgaming.bps.particle.ParticleUnderwater;
+
+public class BPSRegistry
 {
     public static EnumParticleTypes UNDERWATER;
     public static EnumParticleTypes CRIMSON_SPORE;

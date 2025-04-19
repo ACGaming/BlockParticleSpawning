@@ -1,19 +1,19 @@
-package mod.acgaming.cbp.core;
+package mod.acgaming.bps.core;
 
 import com.google.common.eventbus.EventBus;
 import net.minecraftforge.fml.common.DummyModContainer;
 import net.minecraftforge.fml.common.LoadController;
 import net.minecraftforge.fml.common.ModMetadata;
 
-public class CBPContainer extends DummyModContainer
+public class BPSContainer extends DummyModContainer
 {
-    public CBPContainer()
+    public BPSContainer()
     {
         super(new ModMetadata());
         ModMetadata meta = this.getMetadata();
-        meta.modId = "cbpcore";
-        meta.name = "Custom Block Particles Core";
-        meta.description = "Core functionality of Custom Block Particles";
+        meta.modId = "bpscore";
+        meta.name = "Block Particle Spawning Core";
+        meta.description = "Core functionality of Block Particle Spawning";
         meta.version = "1.12.2-1.0.0";
         meta.authorList.add("ACGaming");
     }

@@ -1,8 +1,8 @@
-## Custom Block Particles
+## Block Particle Spawning
 
-###### Customize block particle effects with ease!
+###### Spawn custom block particle effects with ease!
 
-Custom Block Particles allows you to attach particle effects to any block in Minecraft, allowing modpack authors to enhance the visual aspects of blocks with many use cases.
+Block Particle Spawning allows you to attach particle effects to any block in Minecraft, allowing modpack authors to enhance the visual aspects of blocks with many use cases.
 
 Requires [**MixinBooter**](https://www.curseforge.com/minecraft/mc-mods/mixin-booter)
 
@@ -23,7 +23,7 @@ Determines the number of particles that will be spawned.
 
 #### Particle Modes
 
-Specifies the method by which particles are spawned. Valid values include `FIRE_SMOKE`, `MYCELIUM`, `REDSTONE_ORE`, `TORCH`.
+Specifies the method by which particles are spawned. Valid values include `BASIC`, `DRIP`, `FIRE_SMOKE`, `MYCELIUM`, `REDSTONE_ORE`, `TORCH`.
 **Example:** `MYCELIUM`
 
 #### Particle Rates
@@ -75,4 +75,4 @@ S:"Particle Types" <
  >
 ```
 
-This mod was commissioned for Minecraft 1.12.2
+This mod was commissioned for Minecraft 1.12.2 to be used in the modpack [**Rebirth of the Night (RotN)**](https://www.curseforge.com/minecraft/modpacks/rebirth-of-the-night).

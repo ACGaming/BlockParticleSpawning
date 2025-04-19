@@ -1,7 +1,0 @@
-{
-  "package": "mod.acgaming.cbp.mixin",
-  "refmap": "mixins.cbp.refmap.json",
-  "minVersion": "0.8",
-  "compatibilityLevel": "JAVA_8",
-  "client": ["CBPBlockMixin"]
-}
